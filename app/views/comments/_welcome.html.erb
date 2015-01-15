@@ -5,8 +5,8 @@
 	Signed in as <%= current_user.name %>. Not you?
 	<%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
 	<% else %>
-	<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-	<%= link_to  "Sign in with Twitter", user_omniauth_authorize_path(:twitter)  %> 
-	<%= link_to "Sign in with Linkedin",user_omniauth_authorize_path(:linkedin) %>
+	<%= link_to image_tag("fb.png"), user_omniauth_authorize_path(:facebook) %>
+	<%= link_to  image_tag("twitter.png"), user_omniauth_authorize_path(:twitter)  %> 
+	<%= link_to image_tag("linkedin.png"), user_omniauth_authorize_path(:linkedin) %>
     <% end %>
 </div>
