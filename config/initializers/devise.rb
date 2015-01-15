@@ -234,7 +234,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   require "omniauth-facebook"
-  config.omniauth :facebook, '432203923561410', '019e7e102d4da7c0d9010e35b3c2e494'
+  config.omniauth :facebook, '531572216895904', 'd884f283b37fb13ebe62ca10f61dfb8c'
   require 'omniauth-twitter'
   config.omniauth :twitter, "feA0wRrC30Qlg1IVlvOhnGvs1", "aClxnroW1BlA67c5v5G1Tbt52caSn68Nz5TibH6xKlAjfyz8tj"
   require 'omniauth-linkedin'
