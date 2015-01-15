@@ -7,17 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
-Signed in as <%= current_user.name %>. Not you?
-<%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
-<% else %>
-<%= link_to "Sign up", new_user_registration_path %> or
-<%= link_to "Sign in", new_user_session_path %>or
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>or
-<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>or
-<%= link_to "Sign in with Linkedin",user_omniauth_authorize_path(:linkedin) %>
-<% end %>
-<%= yield %>
 
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Mini-chat', root_path, class: 'navbar-brand' %>
+    </div>
+  </div>
+</div>
+<% if current_user %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Sign out", destroy_user_session_path,:method => :delete %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Created by <a href="http://radiant-wind.com" target="_blank">Radiant Wind</a></p>
+  </div>
+</div>
 </body>
 </html>

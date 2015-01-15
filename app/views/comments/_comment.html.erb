@@ -1,0 +1,8 @@
+<li class="media comment">
+  <%#= link_to (comment.user.avatar_url, alt: comment.user.name, class: "media-object"), comment.user.profile_url, target: '_blank', class: 'pull-left' %>
+  <div class="media-body">
+    <h4 class="media-heading"><%= comment.user.name %> says
+      <small class="text-muted">[at <%= comment.created_at.strftime('%-d %B %Y, %H:%M:%S') %>]</small></h4>
+    <p><%= comment.body %></p>
+  </div>
+</li>

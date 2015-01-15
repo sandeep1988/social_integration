@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+gem 'better_errors'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -18,6 +19,7 @@ gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -34,6 +36,9 @@ gem 'omniauth'
 gem 'omniauth-facebook' 
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
+gem 'bootstrap-sass'
+gem 'faye-rails', '~> 2.0'
+#gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -41,5 +46,5 @@ gem 'omniauth-linkedin'
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+ gem 'debugger2'
 

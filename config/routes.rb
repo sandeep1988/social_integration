@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments, only: [:new, :create]
   #devise_for :users
   #get 'home/index'
 
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 #devise_for :users , :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'comments#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
