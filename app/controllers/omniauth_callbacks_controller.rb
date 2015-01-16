@@ -15,6 +15,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def twitter
     auth = env["omniauth.auth"]
     @user = User.find_for_twitter_oauth(request.env["omniauth.auth"],current_user)
+    @user.avatar_url = env["omniauth.auth"][:info][:image]
+    @user.profile_url = env["omniauth.auth"][:info][:urls][:Twitter]
     if @user.persisted?
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success"
       sign_in_and_redirect @user, :event => :authentication
@@ -27,6 +29,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def linkedin
     auth = env["omniauth.auth"]
     @user = User.connect_to_linkedin(request.env["omniauth.auth"],current_user)
+    @user.avatar_url = request.env["omniauth.auth"][:info][:image] 
+    @user.profile_url = request.env["omniauth.auth"][:info][:urls][:public_profile]
     if @user.persisted?
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success"
       sign_in_and_redirect @user, :event => :authentication
