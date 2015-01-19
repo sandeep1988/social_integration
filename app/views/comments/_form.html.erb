@@ -9,11 +9,10 @@
    <div id ="like_btn"> <%= f.submit 'Post', class: 'btn btn-primary btn-lg' %></div>
   <% end %>
 </div>
-
 <script>
 $(document).ready(function(){
-  setTimeout(function(){
-   window.location.reload(1);
-}, 10000);
+    $( "#like_btn" ).click(function() {
+    window.location.reload(true);
+   });
 });
 </script>
